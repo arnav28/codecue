@@ -1,0 +1,43 @@
+<div class="container app-wrapper">
+    <div class="col-sm-3 side-wrapper">
+        <div class="panel panel-default">
+            <div class="panel-body text-center">
+                <img ng-src="{{user.photo}}" alt="Facebook picture" class="img-rounded">
+                <p>{{user.name}}</p>
+            </div>
+        </div>
+
+        <div class="list-group">
+            <a class="list-group-item" ui-sref="app.dashboard"><i class="fa fa-home fa-fw"></i>&nbsp; Home</a>
+            <a class="list-group-item disabled" href="#"><i class="fa fa-thumbs-up fa-fw"></i>&nbsp; Liked</a>
+        </div>
+
+    </div>
+
+    <div class="col-sm-8 list-wrapper">
+        <form ng-submit="updateProfile(user)" name="Edit Profile">
+            <div class="col-sm-offset-2 col-sm-8">
+                <p ng-if="message" class="text-success text-center">{{message}}</p>
+                <div class="form-group">
+                    <p>Name</p>
+                    <input type="text" class="form-control" ng-model="user.name">
+                </div>
+                <div class="form-group">
+                    <p>Skills</p>
+                    <textarea class="form-control" rows="2" ng-model="user.skills"></textarea>
+                </div>
+                <div class="form-group">
+                    <p>Email</p>
+                    <input type="email" class="form-control" ng-model="user.email">
+                </div>
+                <div class="form-group">
+                    <p>Website</p>
+                    <input type="url" class="form-control" ng-model="user.website">
+                </div>
+                <div class="form-group text-right">
+                    <button type="submit" class="btn btn-success">Update Profile</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,59 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    background-color: #E9EAED;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+textarea{
+    resize: none;
+}
+hr{
+    border-top: 1px solid #d1d2d5;
+}
+.jumbotron{
+    background-color: white;
+}
+.btn-default.active, .btn-default:active, .btn-default:hover, .btn-default.active:hover {
+    border-color:#6CBD7D;
+    color: #6CBD7D;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    background-color: white;
+}
+.navbar{
+    margin-bottom: 0;
+}
+.cursor{
+    cursor: pointer;
+}
+.app-wrapper{
+    margin-top: 50px;
+}
+.fb_login_btn{
+    background-color: #3b5998;
+    color: #ffffff;
+    border: none;
+}
+
+.tag-btn{
+    margin-right: 12px;
+    margin-bottom: 12px;
+}
+.side-wrapper{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.modal-content{
+    border-radius: 1px;
+}
+.message{
+    margin-top: 35%;
+}
+
+@media (min-width: 768px) {   
+    .list-wrapper{
+        padding: 20px 50px 20px;
+    }   
+}

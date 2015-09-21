@@ -1,0 +1,57 @@
+<div class="container app-wrapper">
+  <div class="col-sm-4 side-wrapper">
+    <button class="btn btn-success" type="button" ng-click="open()">New Post</button>
+    <hr>
+    <a class="btn btn-default tag-btn" ui-sref="app.profile" role="button"><i class="fa fa-user"></i>&nbsp; Profile</a>
+    <button class="btn btn-default tag-btn disabled" type="button"><i class="fa fa-bolt"></i>&nbsp; Trending</button>
+    <button class="btn btn-default tag-btn disabled" type="button"><i class="fa fa-trophy"></i>&nbsp; Popular</button>
+    <hr>
+
+    <label class="btn btn-default tag-btn" ng-model="tag.active" btn-radio="'T00'" ng-change="loadPosts()">Show all</label>
+    <label class="btn btn-default tag-btn" ng-repeat="item in tags" ng-model="tag.active" btn-radio="item.$id" ng-change="loadPosts()">{{item.Name}}</label>
+
+  </div>
+  <div class="col-sm-8 list-wrapper">
+    <div class="panel panel-default" ng-repeat="post in posts | orderBy: '-time'" ng-controller="LikesCtrl">
+      <div class="panel-body">
+        <p ng-bind-html="post.message"></p>
+        <ul class="list-inline text-muted pull-left">
+          <li class="cursor" ng-click="toggleLike(post.$id)"><i class="fa" ng-class="{ 'text-success && fa-thumbs-up': liked.$value, 'fa-thumbs-o-up': !liked.$value }"></i>&nbsp;
+            {{count.length}}</li>
+          <!--<li><i class="fa fa-ellipsis-h"></i></li>-->
+        </ul>
+        <ul class="list-inline text-muted pull-right">
+          <li><i class="fa fa-tag"></i>&nbsp; {{post.tag}}</li>
+        </ul>
+      </div>
+    </div>
+    <p ng-if="posts.length === 0" class="message lead text-center">
+      No posts yet. Check back again soon!!
+    </p>
+  </div>
+</div>
+
+<!-- Modal for new post -->
+<script type="text/ng-template" id="newPostModal.html">
+  <div class="modal-body">
+    <form ng-submit="newPost(post)" name="NewPost">
+      <div class="row">
+      <p ng-if="message" class="text-danger text-center">{{message}}</p>
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="Tag">tag</label>
+            <select required class="form-control" ng-options="item.Name for item in tags" ng-model="post.Tag" id="Tag">
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <textarea class="form-control" rows="4" id="comment" ng-model="post.Msg" ng-required="true"></textarea>
+      </div>
+      <div class="form-group text-right">
+        <button type="button" class="btn btn-link" ng-click="cancel()">Close</button>
+        <button type="submit" class="btn btn-success">Submit</button>
+      </div>
+    </form>
+  </div>
+</script>

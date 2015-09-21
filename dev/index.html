@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Code Cue</title>
+
+    <link rel="stylesheet" href="css/bootstrap.css"> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+
+<body ng-app="app">
+
+<div ui-view></div>
+
+<!-- Angular -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.2/angular-sanitize.min.js"></script>
+<!-- Firebase & AngularFire-->
+<script src="https://cdn.firebase.com/js/client/2.2.9/firebase.js"></script>
+<script src="https://cdn.firebase.com/libs/angularfire/1.1.2/angularfire.js"></script>   
+<!-- UI Bootstrap -->
+<script src="modules/vendors/ui-bootstrap.js"></script>
+
+<!-- App core modules -->
+<script src="app.js"></script>
+<script src="modules/core/core.js"></script>
+<script src="modules/core/common.js"></script>
+
+<!-- Auth modules -->
+<script src="modules/account/account.js"></script>
+<script src="modules/account/account.controller.js"></script>
+<script src="modules/account/account.services.js"></script>
+
+<!-- dashboard -->
+<script src="modules/dashboard/dashboard.js"></script>
+<script src="modules/dashboard/dashboard.controller.js"></script>
+<script src="modules/dashboard/dashboard.services.js"></script>
+
+<!-- profile -->
+<script src="modules/profile/profile.js"></script>
+<script src="modules/profile/profile.controller.js"></script>
+<script src="modules/profile/profile.services.js"></script>
+
+</body>
+</html>
